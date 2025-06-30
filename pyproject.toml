@@ -1,0 +1,6 @@
+[project]
+name = "cryptography_helper_functions"
+license = { text = "MIT" }
+authors = [{ name = "me", email = "jldenny0207@aol.com" }]
+dependencies = []
+dynamic = ["version"]
