@@ -27,7 +27,7 @@ def add_round_key(s: list[list[int]], k: list[list[int]]) -> list[list[int]]:
     assert len(s) == len(k)
     assert len(s[0]) == len(k[0])
 
-    return [[elem_s ^ elem_k for elem_s, elem_k in zip(row_k, row_k)] for row_s, row_k in zip(s, k)]
+    return [[elem_s ^ elem_k for elem_s, elem_k in zip(row_s, row_k)] for row_s, row_k in zip(s, k)]
 
 s_box = (
     0x63, 0x7C, 0x77, 0x7B, 0xF2, 0x6B, 0x6F, 0xC5, 0x30, 0x01, 0x67, 0x2B, 0xFE, 0xD7, 0xAB, 0x76,
