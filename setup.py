@@ -17,7 +17,7 @@ setup(
     license="MIT",
     packages=find_packages(),
     py_modules=["CryptographyHelperFunctions"],
-    install_requires=[],
+    install_requires=["pwntools"],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Environment :: Python3",
