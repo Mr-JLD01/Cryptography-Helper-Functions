@@ -5,13 +5,13 @@ def bytes2matrix(text: bytes) -> list[list[int]]:
     return [list(text[i:i+4]) for i in range(0, len(text), 4)]
 
 def matrix2bytes(matrix: list[list[int]]) -> bytes:
-    return_string: str = ""
+    return_string: bytes = b""
     """ Converts a 4x4 matrix into a 16-byte array.  """
     for row in range(len(matrix)):
         for col in range(len(matrix[row])):
-            return_string += chr(matrix[row][col])
+            return_string += matrix[row][col].to_bytes(length=1, byteorder="big")
 
-    return return_string.encode()
+    return return_string
 
 def add_round_key(s: list[list[int]], k: list[list[int]]) -> list[list[int]]:
     """XORs the 4xr4 round key to the 4x4 state
