@@ -195,3 +195,19 @@ def euler_totient(prime_factors: list[tuple[int, int]]) -> int:
 		totient *= (pow(prime, power) - pow(prime, power-1))
 
 	return totient
+
+def inverse(mod_group: int, number: int) -> int:
+	"""Returns the inverse of a number in a given Mod Group
+
+	Args:
+		mod_group (int): base of the mod group
+		number (int): number to find the modular inverse of
+
+	Returns:
+		int: returns the modular inverse of a number(if it exists), returns 0 otherwise(means the number is a zero divisor)
+	"""
+	greatest_common_divisor, _, inv = extended_gcd(mod_group, number)
+
+	if greatest_common_divisor == 1:
+		return inv
+	return 0
